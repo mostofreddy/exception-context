@@ -1,0 +1,55 @@
+{
+    "name": "smarttly/exceptions-utils",
+    "type": "library",
+    "description": "Exceptions Utils",
+    "keywords": ["exception", "error"],
+    "homepage": "https://github.com/mostofreddy/exceptions_utils",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Federico Lozada Mosto",
+            "email": "mosto.federico@gmail.com",
+            "homepage": "https://github.com/mostofreddy"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.5.*",
+        "phpunit/phpunit": "9.1.*",
+        "codedungeon/phpunit-result-printer": "0.27.*",
+        "php-coveralls/php-coveralls": "2.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smarttly\\ExceptionUtils\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Smarttly\\ExceptionUtils\\Tests\\": "tests/src/"
+        }
+    },
+    "scripts": {
+        "ci": [
+            "@phpunit",
+            "@phpcs"
+        ],
+        "phpunit": "phpunit",
+        "phpcs": "phpcs --standard=ruleset.xml"
+    },
+    "scripts-descriptions": {
+        "ci": "Run integration",
+        "phpunit": "Run unit testing",
+        "phpcs": "Check coding standard"
+    },
+    "support": {
+        "issues": "https://github.com/mostofreddy/exceptions_utils/issues"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
