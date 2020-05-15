@@ -12,20 +12,23 @@ class CustomException extends Exception
     use ExceptionContextTrait;
 }
 
-function foo($id)
+class MyService
 {
-    // ... Business logic
-    throw (new CustomException('Error Message', 999))
+    // code...
+
+    public function foo(int $id)
+    {
+        throw (new CustomException('Model not found'))
         ->setContext([
             'id' => $id
-            // ...
         ]);
+    }
 }
 
 
 try {
-    $id = rand();
-    foo($id);
-} catch (Throwable $ex) {
-    echo print_r(ExceptionFormatter::format($ex), true);
+    $service = new MyService();
+    $service->foo(1234);
+} catch (CustomException $e) {
+    echo print_r(ExceptionFormatter::format($e), true);
 }
